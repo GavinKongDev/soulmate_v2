@@ -19,9 +19,9 @@ const App: FC = () => {
         index
         element={deviceWidth <= 750 ? <MobileHome /> : <MobileHome />}
       />
-      <Route path="soulmate-with-daily-maintenance" element={<QA1 />} />
-      <Route path="soulmate-with-medical-beauty" element={<QA2 />} />
-      <Route path="soulmate-with-diet" element={<QA3 />} />
+      <Route path="/soulmate-with-daily-maintenance" element={<QA1 />} />
+      <Route path="/soulmate-with-medical-beauty" element={<QA2 />} />
+      <Route path="/soulmate-with-diet" element={<QA3 />} />
     </Routes>
   );
 };

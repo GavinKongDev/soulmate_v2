@@ -3,14 +3,14 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { enqueueSnackbar } from "notistack";
 import { useEffect } from "react";
-import { ReactComponent as Addfriend } from "../../public/assets/addfriend_button.svg";
-import { ReactComponent as WhiteArrowRight } from "../../public/assets/arrow.svg";
-import { ReactComponent as BlueArrowRight } from "../../public/assets/arrow_blue.svg";
-import { ReactComponent as Beta } from "../../public/assets/beta.svg";
-import { ReactComponent as Contact } from "../../public/assets/contactus_button.svg";
-import { ReactComponent as Join } from "../../public/assets/join_button.svg";
-import { ReactComponent as Ok } from "../../public/assets/ok.svg";
-import { ReactComponent as Share } from "../../public/assets/share_button.svg";
+import { ReactComponent as Addfriend } from "../assets/addfriend_button.svg";
+import { ReactComponent as WhiteArrowRight } from "../assets/arrow.svg";
+import { ReactComponent as BlueArrowRight } from "../assets/arrow_blue.svg";
+import { ReactComponent as Beta } from "../assets/beta.svg";
+import { ReactComponent as Contact } from "../assets/contactus_button.svg";
+import { ReactComponent as Join } from "../assets/join_button.svg";
+import { ReactComponent as Ok } from "../assets/ok.svg";
+import { ReactComponent as Share } from "../assets/share_button.svg";
 
 const Home = () => {
   const handleShare = async () => {

@@ -4,9 +4,11 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "home-bg1": "url('/public/assets/bg1.png')",
-        "home-bg2": "url('/public/assets/bg2.png')",
-        "home-bg3": "url('/public/assets/bg3.png')",
+        "home-bg1": "url('/assets/bg1.png')",
+        "home-bg2": "url('/assets/bg2.png')",
+        "home-bg3": "url('/assets/bg3.png')",
+        "qa1-bg1": "url('/assets/qa1/bg1.png')",
+        "qa1-bg2": "url('/assets/qa1/bg2.png')",
       },
     },
   },
