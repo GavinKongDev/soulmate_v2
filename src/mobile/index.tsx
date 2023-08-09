@@ -1,6 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import { enqueueSnackbar } from "notistack";
 import { useEffect } from "react";
 import { ReactComponent as Addfriend } from "../../public/assets/addfriend_button.svg";
 import { ReactComponent as WhiteArrowRight } from "../../public/assets/arrow.svg";
@@ -12,12 +13,34 @@ import { ReactComponent as Ok } from "../../public/assets/ok.svg";
 import { ReactComponent as Share } from "../../public/assets/share_button.svg";
 
 const Home = () => {
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "SoulMate 搜美",
+          text: "點擊加入開始與 Soulmate 搜美暢聊!",
+          url: "https://demo.eguider.com.tw/",
+        });
+      } catch (error) {
+        console.error("Error sharing:", error);
+      }
+    } else {
+      const copyText = "https://demo.eguider.com.tw/";
+      try {
+        await navigator.clipboard.writeText(copyText);
+        enqueueSnackbar("已複製網址");
+      } catch (error) {
+        console.error("Error copying to clipboard:", error);
+      }
+    }
+  };
+
   useEffect(() => {
     AOS.init();
   }, []);
   return (
     <div className="flex flex-col items-center">
-      <div className="w-[375px] h-[1660px] bg-home-bg1 relative">
+      <div className="w-[375px] h-[1660px] bg-home-bg1 relative overflow-hidden">
         {/* icons */}
         <div>
           <img
@@ -48,7 +71,7 @@ const Home = () => {
           </div>
           <a href="https://lin.ee/BAa3w9g" target="__blank">
             <Addfriend
-              className="absolute w-[137px] h-[40px] left-[70px] top-[365px] z-10"
+              className="absolute w-[137px] h-[40px] left-[70px] top-[365px] z-10 cursor-pointer"
               data-aos="flip-left"
               data-aos-delay="600"
               data-aos-once="true"
@@ -145,7 +168,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-[375px] h-[1872px] bg-home-bg2 relative">
+      <div className="w-[375px] h-[1872px] bg-home-bg2 relative overflow-hidden">
         <img
           src="/assets/curve1.png"
           alt="curve1"
@@ -189,31 +212,37 @@ const Home = () => {
         </div>
 
         {/* QA1 */}
-        <img
-          src="/assets/qa1.png"
-          alt="qa1"
-          className="absolute w-[337px] h-[277px] left-[26px] top-[644px]"
-          data-aos="fade-left"
-          data-aos-once="true"
-        />
+        <a href="/soulmate-with-daily-maintenance" target="__blank">
+          <img
+            src="/assets/qa1.png"
+            alt="qa1"
+            className="absolute w-[337px] h-[277px] left-[26px] top-[644px]"
+            data-aos="fade-left"
+            data-aos-once="true"
+          />
+        </a>
 
         {/* QA2 */}
-        <img
-          src="/assets/qa2.png"
-          alt="qa2"
-          className="absolute w-[324px] h-[273px] left-[26px] top-[957px]"
-          data-aos="fade-right"
-          data-aos-once="true"
-        />
+        <a href="/soulmate-with-medical-beauty" target="__blank">
+          <img
+            src="/assets/qa2.png"
+            alt="qa2"
+            className="absolute w-[324px] h-[273px] left-[26px] top-[957px]"
+            data-aos="fade-right"
+            data-aos-once="true"
+          />
+        </a>
 
         {/* QA3 */}
-        <img
-          src="/assets/qa3.png"
-          alt="qa3"
-          className="absolute w-[341px] h-[270px] left-[17px] top-[1274px]"
-          data-aos="fade-left"
-          data-aos-once="true"
-        />
+        <a href="/soulmate-with-diet" target="__blank">
+          <img
+            src="/assets/qa3.png"
+            alt="qa3"
+            className="absolute w-[341px] h-[270px] left-[17px] top-[1274px]"
+            data-aos="fade-left"
+            data-aos-once="true"
+          />
+        </a>
 
         <img
           src="/assets/curve2.png"
@@ -234,7 +263,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-[375px] h-[1868px] bg-home-bg3 relative">
+      <div className="w-[375px] h-[1868px] bg-home-bg3 relative overflow-hidden">
         {/* 影片 */}
         <img
           src="/assets/video.png"
@@ -295,19 +324,22 @@ const Home = () => {
         </div>
 
         {/* 立即加入 */}
-        <Join
-          className="absolute h-[40px] w-[135px] left-[30px] top-[688px]"
-          data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-once="true"
-          data-aos-anchor=".anchor-1"
-        />
+        <a href="https://lin.ee/BAa3w9g" target="__blank">
+          <Join
+            className="absolute h-[40px] w-[135px] left-[30px] top-[688px] cursor-pointer"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-once="true"
+            data-aos-anchor=".anchor-1"
+          />
+        </a>
         <Share
-          className="absolute h-[40px] w-[135px] left-[185px] top-[688px]"
+          className="absolute h-[40px] w-[135px] left-[185px] top-[688px] cursor-pointer"
           data-aos="fade-up"
           data-aos-delay="400"
           data-aos-once="true"
           data-aos-anchor=".anchor-1"
+          onClick={handleShare}
         />
 
         {/* QRCODE */}
@@ -338,13 +370,16 @@ const Home = () => {
           謝謝您的建言與指教。
         </div>
 
-        <Contact
-          className="absolute h-[40px] w-[135px] left-[30px] top-[1412px]"
-          data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-once="true"
-          data-aos-anchor=".anchor-2"
-        />
+        <a href="https://lin.ee/BAa3w9g" target="__blank">
+          {" "}
+          <Contact
+            className="absolute h-[40px] w-[135px] left-[30px] top-[1412px] cursor-pointer"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-once="true"
+            data-aos-anchor=".anchor-2"
+          />
+        </a>
 
         <div className="absolute h-[252px] w-[315px] left-[30px] top-[1472px] text-[#FFFFFF] text-[12px]">
           在使用

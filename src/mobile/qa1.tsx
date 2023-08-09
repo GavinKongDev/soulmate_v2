@@ -1,5 +1,5 @@
 const QA1 = () => {
-  return <div>QA1</div>;
+  return <div>保養攻略</div>;
 };
 
 export default QA1;
