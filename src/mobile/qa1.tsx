@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ReactComponent as WhiteArrowRight } from "../assets/arrow.svg";
 import { ReactComponent as Check } from "../assets/check.svg";
 import { ReactComponent as One } from "../assets/qa1/01.svg";
@@ -6,6 +7,10 @@ import { ReactComponent as Textfield2 } from "../assets/qa1/textfield2.svg";
 import { ReactComponent as Textfield4 } from "../assets/qa1/textfield4.svg";
 
 const QA1 = () => {
+  useEffect(() => {
+    document.title = "Soulmate 搜美 - 保養攻略";
+  }, []);
+
   return (
     <div className="flex flex-col items-center">
       <img
@@ -20,7 +25,7 @@ const QA1 = () => {
         </div>
 
         <img
-          src="/assets/qa1/curve1.png"
+          src="/assets/qa_curve1.png"
           alt="curve1"
           className="absolute w-[375px] h-[572px] top-[275px]"
         />
@@ -140,7 +145,7 @@ const QA1 = () => {
           Soulmate可能因問題複雜程度、表達方式、領域專業性等因素而影響回覆內容及正確性，使用時請注意其限制和適用範圍，也可來信回饋您的寶貴建議。
         </div>
         <img
-          src="/assets/qa1/curve2.png"
+          src="/assets/qa_curve2.png"
           alt="curve2"
           className="absolute w-[375px] h-[301px] top-[972px] z-0"
         />

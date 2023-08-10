@@ -40,7 +40,7 @@ const Home = () => {
   }, []);
   return (
     <div className="flex flex-col items-center">
-      <div className="w-[375px] h-[1660px] bg-home-bg1 relative overflow-hidden">
+      <div className="w-[375px] h-[1660px] bg-home-bg1 relative overflow-x-clip">
         {/* icons */}
         <div>
           <img
@@ -168,11 +168,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-[375px] h-[1872px] bg-home-bg2 relative overflow-hidden">
+      <div className="w-[375px] h-[1872px] bg-home-bg2 relative overflow-x-clip">
         <img
           src="/assets/curve1.png"
           alt="curve1"
-          className="absolute top-[-20px]"
+          className="absolute top-[-20px] z-10"
         />
 
         {/* 了解Soulmate搜美的 特色後，讓我們來看看 該如何使用！ */}
@@ -210,6 +210,12 @@ const Home = () => {
         <div className="absolute w-[280px] h-[58px] left-[30px] top-[526px] text-white text-[20px]">
           對於該詢問哪些問題沒有想法？ 參考以下提問激發你的想像力！
         </div>
+
+        <img
+          src="/assets/curve3.png"
+          alt="curve3"
+          className="absolute h-[316px] w-[88px] top-[672px]"
+        />
 
         {/* QA1 */}
         <a href="/soulmate-with-daily-maintenance" target="__blank">
@@ -263,7 +269,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-[375px] h-[1868px] bg-home-bg3 relative overflow-hidden">
+      <div className="w-[375px] h-[1868px] bg-home-bg3 relative overflow-x-clip">
         {/* 影片 */}
         <img
           src="/assets/video.png"
