@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { ReactComponent as WhiteArrowRight } from "../assets/arrow.svg";
-import { ReactComponent as Check } from "../assets/check.svg";
-import { ReactComponent as One } from "../assets/qa1/01.svg";
-import { ReactComponent as Textfield } from "../assets/qa1/textfield.svg";
-import { ReactComponent as Textfield2 } from "../assets/qa1/textfield2.svg";
-import { ReactComponent as Textfield4 } from "../assets/qa1/textfield4.svg";
+import { ReactComponent as WhiteArrowRight } from "/src/assets/mobile/arrow.svg";
+import { ReactComponent as Check } from "/src/assets/mobile/check.svg";
+import { ReactComponent as One } from "/src/assets/mobile/qa1/01.svg";
+import { ReactComponent as Textfield } from "/src/assets/mobile/qa1/textfield.svg";
+import { ReactComponent as Textfield2 } from "/src/assets/mobile/qa1/textfield2.svg";
+import { ReactComponent as Textfield4 } from "/src/assets/mobile/qa1/textfield4.svg";
 
 const QA1 = () => {
   useEffect(() => {
@@ -14,7 +14,7 @@ const QA1 = () => {
   return (
     <div className="flex flex-col items-center">
       <img
-        src="/assets/qa_title.png"
+        src="/src/assets/mobile/qa_title.png"
         alt="title"
         className="w-[375px] h-[348px]"
       />
@@ -25,18 +25,18 @@ const QA1 = () => {
         </div>
 
         <img
-          src="/assets/qa_curve1.png"
+          src="/src/assets/mobile/qa_curve1.png"
           alt="curve1"
           className="absolute w-[375px] h-[572px] top-[275px]"
         />
         <Textfield className="absolute w-[330px] h-[733px] left-[14px] top-[173px]" />
         <img
-          src="/assets/soulmate_icon_circle.png"
+          src="/src/assets/mobile/soulmate_icon_circle.png"
           alt="icon"
           className="absolute w-[58px] h-[58px] left-[30px] top-[148px]"
         />
         <img
-          src="/assets/qa1/girl.png"
+          src="/src/assets/mobile/qa1/girl.png"
           alt="girl"
           className="absolute w-[124px] h-[118px] left-[191px] top-[30px]"
         />
@@ -70,7 +70,7 @@ const QA1 = () => {
         </div>
 
         <img
-          src="/assets/qa1/textfield3.png"
+          src="/src/assets/mobile/qa1/textfield3.png"
           alt="textfield3"
           className="absolute w-[375px] h-[244px] top-[136px]"
         />
@@ -86,7 +86,7 @@ const QA1 = () => {
         </div>
 
         <img
-          src="/assets/soulmate_icon.png"
+          src="/src/assets/mobile/soulmate_icon.png"
           alt="soulmate_icon"
           className="absolute w-[148px] h-[26px] left-[30px] top-[437px]"
         />
@@ -136,7 +136,7 @@ const QA1 = () => {
         </div>
 
         <img
-          src="/assets/qa1/think.png"
+          src="/src/assets/mobile/qa1/think.png"
           alt="think"
           className="absolute w-[315px] h-[192px] left-[30px] top-[897px] z-10"
         />
@@ -145,7 +145,7 @@ const QA1 = () => {
           Soulmate可能因問題複雜程度、表達方式、領域專業性等因素而影響回覆內容及正確性，使用時請注意其限制和適用範圍，也可來信回饋您的寶貴建議。
         </div>
         <img
-          src="/assets/qa_curve2.png"
+          src="/src/assets/mobile/qa_curve2.png"
           alt="curve2"
           className="absolute w-[375px] h-[301px] top-[972px] z-0"
         />
