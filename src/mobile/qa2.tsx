@@ -1,10 +1,4 @@
 import { useEffect } from "react";
-import { ReactComponent as WhiteArrowRight } from "/src/assets/mobile/arrow.svg";
-import { ReactComponent as Check } from "/src/assets/mobile/check.svg";
-import { ReactComponent as Textfield2 } from "/src/assets/mobile/qa1/textfield2.svg";
-import { ReactComponent as Textfield4 } from "/src/assets/mobile/qa1/textfield4.svg";
-import { ReactComponent as Two } from "/src/assets/mobile/qa2/02.svg";
-import { ReactComponent as Textfield } from "/src/assets/mobile/qa2/textfield1.svg";
 
 const QA2 = () => {
   useEffect(() => {
@@ -14,33 +8,42 @@ const QA2 = () => {
   return (
     <div className="flex flex-col items-center">
       <img
-        src="/src/assets/mobile/qa_title.png"
+        src="assets/mobile/qa_title.png"
         alt="title"
         className="w-[375px] h-[348px]"
       />
-      <div className="w-[375px] h-[991px] bg-qa1-bg1 relative overflow-hidden">
-        <Two className="absolute w-[131px] h-[100px] left-[30px] top-[40px]" />
+      <div className="w-[375px] h-[991px] relative overflow-hidden bg-[url('/assets/mobile/qa_bg1.png')]">
+        <img
+          src="assets/mobile/qa2/02.svg"
+          className="absolute w-[131px] h-[100px] left-[30px] top-[40px]"
+        />
         <div className="absolute w-[48px] h-[65px] left-[72px] top-[58px] text-[24px] text-[#00cde6]">
           醫美解密
         </div>
 
         <img
-          src="/src/assets/mobile/qa_curve1.png"
+          src="assets/mobile/qa_curve1.png"
           alt="curve1"
           className="absolute w-[375px] h-[572px] top-[275px]"
         />
-        <Textfield className="absolute w-[330px] h-[772px] left-[14px] top-[173px]" />
         <img
-          src="/src/assets/mobile/soulmate_icon_circle.png"
+          src="assets/mobile/qa2/textfield1.svg"
+          className="absolute w-[330px] h-[772px] left-[14px] top-[173px]"
+        />
+        <img
+          src="assets/mobile/soulmate_icon_circle.png"
           alt="icon"
           className="absolute w-[58px] h-[58px] left-[30px] top-[148px]"
         />
         <img
-          src="/src/assets/mobile/qa2/girl.png"
+          src="assets/mobile/qa2/girl.png"
           alt="girl"
           className="absolute w-[119px] h-[122px] left-[196px] top-[26px]"
         />
-        <Textfield2 className="absolute w-[246px] h-[44px] left-[98px] top-[150px]" />
+        <img
+          src="assets/mobile/qa1/textfield2.svg"
+          className="absolute w-[246px] h-[44px] left-[98px] top-[150px]"
+        />
         <div className="absolute w-[192px] h-[27px] left-[124px] top-[160px] text-[16px] text-[#8700f0]">
           做音波拉提應該注意什麼？
         </div>
@@ -67,7 +70,7 @@ const QA2 = () => {
           最重要的是，尋求專業意見並仔細評估你的個人情況，確定音波拉提是否適合你的皮膚需求。這將有助於確保你獲得安全且有效的結果。
         </div>
       </div>
-      <div className="w-[375px] h-[1273px] bg-qa1-bg2 relative overflow-hidden">
+      <div className="w-[375px] h-[1273px] relative overflow-hidden bg-[url('/assets/mobile/qa_bg2.png')]">
         <div className="absolute w-[286px] h-76px] left-[45px] top-[30px] text-[26px] text-white text-center">
           不確定該怎麼提問嗎？
           <br />
@@ -75,7 +78,7 @@ const QA2 = () => {
         </div>
 
         <img
-          src="/src/assets/mobile/qa1/textfield3.png"
+          src="assets/mobile/qa1/textfield3.png"
           alt="textfield3"
           className="absolute w-[375px] h-[244px] top-[136px]"
         />
@@ -91,7 +94,7 @@ const QA2 = () => {
         </div>
 
         <img
-          src="/src/assets/mobile/soulmate_icon.png"
+          src="assets/mobile/soulmate_icon.png"
           alt="soulmate_icon"
           className="absolute w-[148px] h-[26px] left-[30px] top-[437px]"
         />
@@ -105,52 +108,73 @@ const QA2 = () => {
         </div>
 
         <div className="absolute w-[300px] h-[79px] left-[30px] top-[580px]">
-          <WhiteArrowRight className="absolute w-[30px] h-[23px]" />
+          <img
+            src="assets/mobile/arrow.svg"
+            className="absolute w-[30px] h-[23px]"
+          />
           <div className="absolute w-[128px] h-[24px] left-[40px] text-[16px] text-white">
             確認提問是否清晰
           </div>
           <div className="absolute w-[2px] h-[40px] left-[15px] top-[33px] bg-white" />
-          <Check className="absolute w-[13px] h-[15px] left-[40px] top-[34px]" />
+          <img
+            src="assets/mobile/check.svg"
+            className="absolute w-[13px] h-[15px] left-[40px] top-[34px]"
+          />
           <div className="absolute w-[256px] h-[38px] left-[59px] top-[34px] text-[#00cde6] text-[13px]">
             使用簡單、明確語句描述你的問題，Soulmate能更好理解並提供適當的答案。
           </div>
         </div>
 
         <div className="absolute w-[300px] h-[79px] left-[30px] top-[680px]">
-          <WhiteArrowRight className="absolute w-[30px] h-[23px]" />
+          <img
+            src="assets/mobile/arrow.svg"
+            className="absolute w-[30px] h-[23px]"
+          />
           <div className="absolute w-[128px] h-[24px] left-[40px] text-[16px] text-white">
             重新描述問題
           </div>
           <div className="absolute w-[2px] h-[40px] left-[15px] top-[33px] bg-white" />
-          <Check className="absolute w-[13px] h-[15px] left-[40px] top-[34px]" />
+          <img
+            src="assets/mobile/check.svg"
+            className="absolute w-[13px] h-[15px] left-[40px] top-[34px]"
+          />
           <div className="absolute w-[256px] h-[38px] left-[59px] top-[34px] text-[#00cde6] text-[13px]">
             使用不同的詞彙或表達方式再次提出問題，讓Soulmate換個角度重新回覆。
           </div>
         </div>
 
         <div className="absolute w-[300px] h-[79px] left-[30px] top-[780px]">
-          <WhiteArrowRight className="absolute w-[30px] h-[23px]" />
+          <img
+            src="assets/mobile/arrow.svg"
+            className="absolute w-[30px] h-[23px]"
+          />
           <div className="absolute w-[144px] h-[24px] left-[40px] text-[16px] text-white">
             澄清並詳細解釋問題
           </div>
           <div className="absolute w-[2px] h-[60px] left-[15px] top-[33px] bg-white" />
-          <Check className="absolute w-[13px] h-[15px] left-[40px] top-[34px]" />
+          <img
+            src="assets/mobile/check.svg"
+            className="absolute w-[13px] h-[15px] left-[40px] top-[34px]"
+          />
           <div className="absolute w-[256px] h-[57px] left-[59px] top-[34px] text-[#00cde6] text-[13px]">
             如果回答與你所需的資訊不符，可以澄清問題。你可以說「不是這個意思，我是問...」並詳細解釋你的問題。
           </div>
         </div>
 
         <img
-          src="/src/assets/mobile/qa1/think.png"
+          src="assets/mobile/qa1/think.png"
           alt="think"
           className="absolute w-[315px] h-[192px] left-[30px] top-[897px] z-10"
         />
-        <Textfield4 className="absolute w-[344px] h-[168px] left-[16px] top-[1089px] z-10" />
+        <img
+          src="assets/mobile/qa1/textfield4.svg"
+          className="absolute w-[344px] h-[168px] left-[16px] top-[1089px] z-10"
+        />
         <div className="absolute w-[280px] h-[96px] left-[48px] top-[1123px] text-[16px] text-[#8700f0] z-10">
           Soulmate可能因問題複雜程度、表達方式、領域專業性等因素而影響回覆內容及正確性，使用時請注意其限制和適用範圍，也可來信回饋您的寶貴建議。
         </div>
         <img
-          src="/src/assets/mobile/qa_curve2.png"
+          src="assets/mobile/qa_curve2.png"
           alt="curve2"
           className="absolute w-[375px] h-[301px] top-[972px] z-0"
         />

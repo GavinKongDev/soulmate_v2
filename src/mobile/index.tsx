@@ -1,16 +1,7 @@
-/// <reference types="vite-plugin-svgr/client" />
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { enqueueSnackbar } from "notistack";
 import { useEffect } from "react";
-import { ReactComponent as Addfriend } from "/src/assets/mobile/addfriend_button.svg";
-import { ReactComponent as WhiteArrowRight } from "/src/assets/mobile/arrow.svg";
-import { ReactComponent as BlueArrowRight } from "/src/assets/mobile/arrow_blue.svg";
-import { ReactComponent as Beta } from "/src/assets/mobile/beta.svg";
-import { ReactComponent as Contact } from "/src/assets/mobile/contactus_button.svg";
-import { ReactComponent as Join } from "/src/assets/mobile/join_button.svg";
-import { ReactComponent as Ok } from "/src/assets/mobile/ok.svg";
-import { ReactComponent as Share } from "/src/assets/mobile/share_button.svg";
 
 const Home = () => {
   const handleShare = async () => {
@@ -19,13 +10,13 @@ const Home = () => {
         await navigator.share({
           title: "SoulMate 搜美",
           text: "點擊加入開始與 Soulmate 搜美暢聊!",
-          url: "https://demo.eguider.com.tw/",
+          url: "https://qa.eguider.com.tw/",
         });
       } catch (error) {
         console.error("Error sharing:", error);
       }
     } else {
-      const copyText = "https://demo.eguider.com.tw/";
+      const copyText = "https://qa.eguider.com.tw/";
       try {
         await navigator.clipboard.writeText(copyText);
         enqueueSnackbar("已複製網址");
@@ -40,16 +31,16 @@ const Home = () => {
   }, []);
   return (
     <div className="flex flex-col items-center">
-      <div className="w-[375px] h-[1660px] bg-home-bg1 relative overflow-x-clip">
+      <div className="w-[375px] h-[1660px] relative overflow-x-clip bg-[url('/assets/mobile/bg1.png')]">
         {/* icons */}
         <div>
           <img
-            src="/src/assets/mobile/eguider_icon.png"
+            src="assets/mobile/eguider_icon.png"
             alt="eguider_icon"
             className="absolute h-[34px] w-[125px] left-[60px] top-[40px]"
           />
           <img
-            src="/src/assets/mobile/soulmate_icon.png"
+            src="assets/mobile/soulmate_icon.png"
             alt="soulmate_icon"
             className="absolute h-[18px] w-[100px] left-[210px] top-[48px]"
           />
@@ -57,27 +48,35 @@ const Home = () => {
         {/* 好消息 */}
         <div data-aos="zoom-out" data-aos-once="true">
           <img
-            src="/src/assets/mobile/goodnews.png"
+            src="assets/mobile/goodnews.png"
             alt="goodnews"
             className="absolute h-[137px] w-[248px] left-[66px] top-[94px]"
           />
-          <Beta className="absolute w-[84px] h-[75px] left-[241px] top-[194px]" />
+          <img
+            src="assets/mobile/beta.svg"
+            className="absolute w-[84px] h-[75px] left-[241px] top-[194px]"
+          />
         </div>
         {/* 搜美是你的私人口袋顧問 */}
         <div className="flex mx-auto mt-[50px] w-[320px] h-[120px]">
-          <BlueArrowRight className="absolute w-[30px] h-[23px] left-[30px] top-[287px]" />
+          <img
+            src="assets/mobile/arrow_blue.svg"
+            className="absolute w-[30px] h-[23px] left-[30px] top-[287px]"
+          />
           <div className="absolute w-[249px] h-[76px] left-[70px] top-[279px] text-[26px] text-white">
             Soulmate搜美是你的 私人口袋顧問
           </div>
           <a href="https://lin.ee/BAa3w9g" target="__blank">
-            <Addfriend
+            <img
+              src="assets/mobile/addfriend_button.svg"
               className="absolute w-[137px] h-[40px] left-[70px] top-[365px] z-10 cursor-pointer"
               data-aos="flip-left"
               data-aos-delay="600"
               data-aos-once="true"
             />
           </a>
-          <WhiteArrowRight
+          <img
+            src="assets/mobile/arrow.svg"
             className="absolute w-[30px] h-[23px] left-[227px] top-[373px]"
             data-aos="flip-left"
             data-aos-delay="700"
@@ -85,7 +84,7 @@ const Home = () => {
           />
         </div>
         <img
-          src="/src/assets/mobile/phone1.png"
+          src="assets/mobile/phone1.png"
           alt="phone1"
           className="absolute h-[448px] w-[375px] top-[307px] z-1"
           data-aos="fade-left"
@@ -114,7 +113,7 @@ const Home = () => {
             data-aos-once="true"
           >
             <img
-              src="/src/assets/mobile/block1.png"
+              src="assets/mobile/block1.png"
               alt="block1"
               className="absolute w-[89px] h-[74px] left-[30px] top-[26px]"
             />
@@ -129,7 +128,7 @@ const Home = () => {
             data-aos-once="true"
           >
             <img
-              src="/src/assets/mobile/block2.png"
+              src="assets/mobile/block2.png"
               alt="block2"
               className="absolute w-[103px] h-[79px] left-[22.5px] top-[26px]"
             />
@@ -144,7 +143,7 @@ const Home = () => {
             data-aos-once="true"
           >
             <img
-              src="/src/assets/mobile/block3.png"
+              src="assets/mobile/block3.png"
               alt="block3"
               className="absolute w-[77px] h-[76px] left-[35.5px] top-[26px]"
             />
@@ -158,7 +157,7 @@ const Home = () => {
             data-aos-delay="600"
           >
             <img
-              src="/src/assets/mobile/block4.png"
+              src="assets/mobile/block4.png"
               alt="block4"
               className="absolute w-[67px] h-[79px] left-[40.5px] top-[26px]"
             />
@@ -168,16 +167,19 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-[375px] h-[1872px] bg-home-bg2 relative overflow-x-clip">
+      <div className="w-[375px] h-[1872px] relative overflow-x-clip bg-[url('/assets/mobile/bg2.png')]">
         <img
-          src="/src/assets/mobile/curve1.png"
+          src="assets/mobile/curve1.png"
           alt="curve1"
           className="absolute top-[-20px] z-10"
         />
 
         {/* 了解Soulmate搜美的 特色後，讓我們來看看 該如何使用！ */}
         <div>
-          <WhiteArrowRight className="absolute w-[30px] h-[23px] left-[30px] top-[170px]" />
+          <img
+            src="assets/mobile/arrow.svg"
+            className="absolute w-[30px] h-[23px] left-[30px] top-[170px]"
+          />
           <div className="absolute w-[260px] h-[76px] left-[30px] top-[203px] text-[26px] text-[#00cde6] leading-[38px]">
             了解Soulmate搜美的 特色後，讓我們來看看
           </div>
@@ -194,14 +196,14 @@ const Home = () => {
 
         {/* 發送問題 */}
         <img
-          src="/src/assets/mobile/speaker.png"
+          src="assets/mobile/speaker.png"
           alt="speaker"
           className="absolute w-[218px] h-[83px] left-[30px] top-[359px]"
         />
 
         {/* soulmate icon */}
         <img
-          src="/src/assets/mobile/soulmate_icon.png"
+          src="assets/mobile/soulmate_icon.png"
           alt="soulmate_icon"
           className="absolute w-[190px] h-[34px] left-[30px] top-[472px]"
         />
@@ -212,7 +214,7 @@ const Home = () => {
         </div>
 
         <img
-          src="/src/assets/mobile/curve3.png"
+          src="assets/mobile/curve3.png"
           alt="curve3"
           className="absolute h-[316px] w-[88px] top-[672px]"
         />
@@ -220,7 +222,7 @@ const Home = () => {
         {/* QA1 */}
         <a href="/soulmate-with-daily-maintenance" target="__blank">
           <img
-            src="/src/assets/mobile/qa1.png"
+            src="assets/mobile/qa1.png"
             alt="qa1"
             className="absolute w-[337px] h-[277px] left-[26px] top-[644px]"
             data-aos="fade-left"
@@ -231,7 +233,7 @@ const Home = () => {
         {/* QA2 */}
         <a href="/soulmate-with-medical-beauty" target="__blank">
           <img
-            src="/src/assets/mobile/qa2.png"
+            src="assets/mobile/qa2.png"
             alt="qa2"
             className="absolute w-[324px] h-[273px] left-[26px] top-[957px]"
             data-aos="fade-right"
@@ -242,7 +244,7 @@ const Home = () => {
         {/* QA3 */}
         <a href="/soulmate-with-diet" target="__blank">
           <img
-            src="/src/assets/mobile/qa3.png"
+            src="assets/mobile/qa3.png"
             alt="qa3"
             className="absolute w-[341px] h-[270px] left-[17px] top-[1274px]"
             data-aos="fade-left"
@@ -251,7 +253,7 @@ const Home = () => {
         </a>
 
         <img
-          src="/src/assets/mobile/curve2.png"
+          src="assets/mobile/curve2.png"
           alt="curve2"
           className="absolute w-[375px] h-[283px] top-[1608px] z-10"
         />
@@ -259,7 +261,7 @@ const Home = () => {
         {/* 保養攻略、美妝技巧、醫美解密、保健指南、飲控撇步、身形管理⋯ ⋯ 跟美有關的大小事，通通都能問！ */}
         <div>
           <img
-            src="/src/assets/mobile/qa4.png"
+            src="assets/mobile/qa4.png"
             alt="qa4"
             className="absolute w-[330px] h-[204px] left-[23px] top-[1584px] z-20"
           />
@@ -269,10 +271,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-[375px] h-[1868px] bg-home-bg3 relative overflow-x-clip">
+      <div className="w-[375px] h-[1868px] relative overflow-x-clip bg-[url('/assets/mobile/bg3.png')]">
         {/* 影片 */}
         <img
-          src="/src/assets/mobile/video.png"
+          src="assets/mobile/video.png"
           alt="video"
           className="absolute w-[375px] h-[212px] top-[61px] anchor-3"
           data-aos-anchor-placement="bottom-center"
@@ -280,7 +282,7 @@ const Home = () => {
 
         {/* addnow */}
         <img
-          src="/src/assets/mobile/addnow.png"
+          src="assets/mobile/addnow.png"
           alt="addnow"
           className="absolute w-[154px] h-[122px] left-[30px] top-[313px]"
           data-aos="fade-down-right"
@@ -289,7 +291,8 @@ const Home = () => {
           data-aos-delay="200"
         />
 
-        <Ok
+        <img
+          src="assets/mobile/ok.svg"
           className="absolute w-[53px] h-[60px] left-[236px] top-[404px]"
           data-aos="flip-up"
           data-aos-delay="300"
@@ -298,7 +301,7 @@ const Home = () => {
         />
 
         <img
-          src="/src/assets/mobile/soulmate_icon.png"
+          src="assets/mobile/soulmate_icon.png"
           alt="soulmate_icon"
           className="absolute h-[26px] w-[148px] left-[30px] top-[470px]"
         />
@@ -331,7 +334,8 @@ const Home = () => {
 
         {/* 立即加入 */}
         <a href="https://lin.ee/BAa3w9g" target="__blank">
-          <Join
+          <img
+            src="assets/mobile/join_button.svg"
             className="absolute h-[40px] w-[135px] left-[30px] top-[688px] cursor-pointer"
             data-aos="fade-up"
             data-aos-delay="200"
@@ -339,7 +343,8 @@ const Home = () => {
             data-aos-anchor=".anchor-1"
           />
         </a>
-        <Share
+        <img
+          src="assets/mobile/share_button.svg"
           className="absolute h-[40px] w-[135px] left-[185px] top-[688px] cursor-pointer"
           data-aos="fade-up"
           data-aos-delay="400"
@@ -350,7 +355,7 @@ const Home = () => {
 
         {/* QRCODE */}
         <img
-          src="/src/assets/mobile/qrcode.png"
+          src="assets/mobile/qrcode.png"
           alt="qrcode"
           className="absolute h-[579px] w-[375px] top-[758px]"
           data-aos="fade-right"
@@ -378,7 +383,8 @@ const Home = () => {
 
         <a href="https://lin.ee/BAa3w9g" target="__blank">
           {" "}
-          <Contact
+          <img
+            src="assets/mobile/contactus_button.svg"
             className="absolute h-[40px] w-[135px] left-[30px] top-[1412px] cursor-pointer"
             data-aos="fade-up"
             data-aos-delay="200"
@@ -404,12 +410,12 @@ const Home = () => {
 
         <div>
           <img
-            src="/src/assets/mobile/eguider_icon.png"
+            src="assets/mobile/eguider_icon.png"
             alt="eguider_icon"
             className="absolute h-[34px] w-[125px] left-[60px] top-[1795px]"
           />
           <img
-            src="/src/assets/mobile/soulmate_icon.png"
+            src="assets/mobile/soulmate_icon.png"
             alt="soulmate_icon"
             className="absolute h-[18px] w-[100px] left-[210px] top-[1803px]"
           />
